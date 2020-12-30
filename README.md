@@ -2,7 +2,7 @@
 
 ## Setting up python environment
 
-Assuming you have set up docker environment, you can run application with:
+Assuming you have set up docker environment, you can run application by executing command below in your command prompt:
 
 ```bash
 docker-compose up
