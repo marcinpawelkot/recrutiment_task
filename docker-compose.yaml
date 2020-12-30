@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  patients-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      patients-db:
+        condition: service_healthy
+    env_file:
+      - env_variables/patients.env
+    command: >
+      bash -c "alembic upgrade head && python run.py"
+
+  patients-db:
+    image: postgres:latest
+    ports:
+      - "5439:5432"
+    volumes:
+      - ./var/lib/postgresql/data/
+    env_file:
+      - env_variables/patients-db.env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
