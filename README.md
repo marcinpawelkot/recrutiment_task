@@ -1,4 +1,4 @@
-# recrutiment_task
+# recruitment_task
 
 ## Setting up environment
 
