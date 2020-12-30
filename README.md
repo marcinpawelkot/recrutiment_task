@@ -1,6 +1,6 @@
 # recrutiment_task
 
-## Setting up python environment
+## Setting up environment
 
 Assuming you have set up docker environment, you can run application by executing command below in your command prompt:
 
